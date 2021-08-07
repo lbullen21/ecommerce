@@ -1,0 +1,92 @@
+
+html{
+    margin:0;
+}
+body {
+    font-family: 'Catamaran', sans-serif;
+    margin: 0
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+}
+
+.navbar h1 {
+    position: relative;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    top: 20px;
+    font-size: 3.5rem;
+    margin: 10px 0 0 0;
+    z-index: 1;
+}
+
+.nav__items {
+    position: relative;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.nav__item {
+    display: none;
+    background-color: whitesmoke;
+    opacity: 75%;
+    padding: 5px;
+    margin: 2px;
+    list-style-type: none;
+}
+
+.nav__item a {
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    top: 125px;
+}
+
+.section__intro  {
+    text-align: center;    
+    padding: 25px;
+    margin: 25px;
+}   
+
+.section__intro h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(7, 231, 231);
+    background-size: contain;
+    justify-content:center;
+    align-items:center;
+}
+
+.neonText {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 0, 255),
+        0 0 82px rgb(255, 0, 255),
+        0 0 92px rgb(255, 0, 255),
+        0 0 102px rgb(255, 0, 255),
+        0 0 151px rgb(255, 0, 255);
+  }
