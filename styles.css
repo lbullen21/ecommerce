@@ -55,14 +55,12 @@ body {
     text-align: center;    
 }   
 
-.section__intro h2, h3 {
+.section__intro h2 {
     font-family: 'Amatic SC', cursive;
     font-size: 2rem;
 }
-h3 {
-    font-size: 1.5rem;
-}
 
+/* Product page */
 .section__products {
     position: relative;
     display: flex;
@@ -88,6 +86,32 @@ h3 {
     height: 50%;
     align-content: center;
 }
+
+/* Contact form */
+
+form {
+    position: relative;
+    margin: auto;
+    width: 375px;
+    height: 600px;
+}
+
+input[type=text], label, textarea {
+    width: 100%;
+    padding: 5px 2px ;
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+}
+
+input[type=submit]{
+    position: relative;
+    background-color: rgba(255, 166, 0, 0.897);
+    color: white;
+    padding: 12px 20px;
+    border: none
+}
+
+/* Footer */
 
 footer {
     display: flex;
