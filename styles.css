@@ -7,23 +7,70 @@ body {
     margin: 0
 }
 
-.navbar {
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* .navbar {
     position: fixed;
     width: 100%;
     top:0;
     left: 0;
-}
+}*/
 
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1.5rem;
+}
 .navbar h1 {
     position: relative;
     color: white;
     font-family: 'Amatic SC', cursive;
     text-align: center;
-    top: 20px;
     font-size: 3.5rem;
-    margin: 10px 0 0 0;
+    left: 41%
+} 
+
+.hamburger {
+    display: none;
 }
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #475569;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+/* 
 .nav__items {
     position: relative;
     right: 15px;
@@ -44,7 +91,7 @@ body {
 .nav__item a {
     color: black;
     text-decoration: none;
-}
+} */
 
 .container {
     position: relative;
