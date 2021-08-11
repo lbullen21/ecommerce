@@ -19,7 +19,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 1.5rem;
+    padding: 0rem 2rem;
 }
 .navbar h1 {
     position: relative;
@@ -27,7 +27,7 @@ a {
     font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 4rem;
-    left: 40%
+    left: 10%
 } 
 
 .hamburger {
@@ -63,13 +63,14 @@ a {
     color: #482ff7;
 }
 
+
 .container {
     position: relative;
     height: 1000px;
 
 }
 
-.section__intro  {
+.section__intro {
     text-align: center;    
 }   
 
@@ -82,7 +83,7 @@ a {
 .section__products {
     position: relative;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
 
 }
@@ -158,3 +159,49 @@ footer {
         0 0 102px rgb(255, 0, 255),
         0 0 151px rgb(255, 0, 255);
   }
+
+  /* media queries */
+
+  @media only screen and (max-width: 1200px) {
+    .navbar h1 {
+        font-size: 3.5rem;
+        /* left: 15% */
+    } 
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .section__products {
+        flex-direction: column;
+    
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar h1 {
+        left: 25%
+    }
+}
