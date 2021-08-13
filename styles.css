@@ -27,7 +27,7 @@ a {
     font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 4rem;
-    left: 10%
+    left: 2%
 } 
 
 .hamburger {
@@ -44,9 +44,11 @@ a {
     background-color: #101010;
 }
 .nav-menu {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 .nav-item {
@@ -83,13 +85,17 @@ a {
 .section__products {
     position: relative;
     display: flex;
-    /* flex-direction: column; */
+    flex-wrap: wrap;
     align-items: center;
+    left: 8%;
+    /* flex-basis: 33.33%; */
 
 }
 
 .product {
-    margin: 1rem;
+    /* position: relative;
+    align-content: center; */
+    margin: 2rem 3rem;
     border: dotted 1px rgba(0, 0, 0, 0.459);
     border-radius: 50%;
     width: 200px;
@@ -165,7 +171,7 @@ footer {
   @media only screen and (max-width: 1200px) {
     .navbar h1 {
         font-size: 3.5rem;
-        /* left: 15% */
+        
     } 
     .nav-menu {
         position: fixed;
@@ -193,15 +199,23 @@ footer {
         display: block;
         cursor: pointer;
     }
-    .section__products {
-        flex-direction: column;
-    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 800px) {
     .navbar h1 {
-        left: 25%
+        font-size: 3rem;
+        left: 18%
     }
 }
