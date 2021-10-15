@@ -81,13 +81,14 @@ a {
     font-size: 2rem;
 }
 
-/* Product page */
+/* Products page */
+
 .section__products {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    left: 8%;
+    left: 3%;
     /* flex-basis: 33.33%; */
 
 }
@@ -96,20 +97,30 @@ a {
     /* position: relative;
     align-content: center; */
     margin: 2rem 3rem;
-    border: dotted 1px rgb(0, 0, 0, 0.495);
-    border-radius: 50%;
+    padding: 20px;
+    border: dotted 1px rgba(89, 235, 5, 0.979);
+    /* border-radius: 50%; */
     width: 200px;
     height: 200px;
+}
+
+.product h3 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
 }
 
 .product__img {
     position: relative;
     display: flex;
     margin-right: 0;
-    top: 25%;
+    /* top: 25%; */
     left: 35%;
     height: 50%;
     align-content: center;
+}
+
+.variety {
+    left: 14%;
 }
 
 /* Contact form */
@@ -119,6 +130,10 @@ form {
     margin: auto;
     width: 375px;
     height: 600px;
+}
+
+label {
+    font-weight: bold;
 }
 
 input[type=text], input[type=tel], label, textarea {
