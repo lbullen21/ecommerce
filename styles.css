@@ -191,14 +191,14 @@ footer {
 
   /* media queries */
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 950px) {
     .navbar h1 {
         font-size: 3.5rem;
         
     } 
     .nav-menu {
         position: fixed;
-        left: -100%;
+        left: -120%;
         top: 5rem;
         flex-direction: column;
         background-color: #fff;
@@ -215,7 +215,16 @@ footer {
     }
 
     .nav-item {
-        margin: 2.5rem 0;
+        margin: 2.5rem ;
+    }
+
+    .section__products {
+        left: 130px;
+        /* margin-bottom: 200px; */
+    }
+
+    .variety{
+        margin-bottom: 200px;
     }
 
     .hamburger {
@@ -245,7 +254,7 @@ footer {
         
         width: 375px;
         height: 400px;
-        right: 11rem;
+        /* right: 11rem; */
     }
     .nav-item{
         position: relative;
@@ -253,13 +262,12 @@ footer {
     }
     .section__products {
         bottom: 2rem;
+        left: 10px
     }
     .product {
         position: relative;
         left: 30px
     }
 
-    .variety {
-        margin-bottom: 150px;
-    }
+    
 }
