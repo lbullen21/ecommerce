@@ -48,7 +48,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .nav-item {
@@ -130,6 +130,7 @@ form {
     margin: auto;
     width: 375px;
     height: 600px;
+    z-index: 1;
 }
 
 label {
@@ -172,6 +173,7 @@ footer {
     background-size: contain;
     justify-content:center;
     align-items:center;
+    z-index: 100;
 }
 
 .neonText {
@@ -238,6 +240,16 @@ footer {
     .navbar h1 {
         font-size: 3rem;
         left: 18%
+    }
+    .nav-menu{
+        
+        width: 375px;
+        height: 400px;
+        right: 11rem;
+    }
+    .nav-item{
+        position: relative;
+        right: 25px
     }
     .section__products {
         bottom: 2rem;
