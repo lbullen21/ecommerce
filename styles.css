@@ -204,8 +204,8 @@ footer {
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
+        /* box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05); */
     }
 
     .nav-menu.active {
@@ -238,5 +238,16 @@ footer {
     .navbar h1 {
         font-size: 3rem;
         left: 18%
+    }
+    .section__products {
+        bottom: 2rem;
+    }
+    .product {
+        position: relative;
+        left: 30px
+    }
+
+    .variety {
+        margin-bottom: 150px;
     }
 }
