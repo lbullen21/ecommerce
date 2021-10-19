@@ -123,6 +123,10 @@ a {
     left: 14%;
 }
 
+.price {
+    text-align: center;
+}
+
 /* Contact form */
 
 form {
