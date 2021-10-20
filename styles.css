@@ -68,8 +68,13 @@ a {
 
 .container {
     position: relative;
-    height: 1000px;
+    height: 800px;
 
+}
+
+.container-contact{
+    position: relative;
+    height: 1000px;
 }
 
 .section__intro {
@@ -127,7 +132,7 @@ a {
     text-align: center;
 }
 
-/* Product page */
+/* homepage slides */
 .mySlides {display: none}
 
 .text {
@@ -217,44 +222,14 @@ input[type=submit]{
     border: none
 }
 
-/* homepage */
-/* The dots/bullets/indicators */
-.dots {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active-homepage {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade-homepage {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
-  }
+/* Product description page */
+
+.variety-product{
+    position: relative;
+    left: 25rem;
+    width: 45%;
+}
+
 /* Search page */
 
 .searchBar {
@@ -265,7 +240,7 @@ input[type=submit]{
 
 footer {
     display: flex;
-    position: fixed;
+    position: static;
     bottom: 0;
     left:0;
     right: 0;
