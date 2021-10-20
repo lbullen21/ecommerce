@@ -226,8 +226,8 @@ input[type=submit]{
 
 .variety-product{
     position: relative;
-    left: 25rem;
-    width: 45%;
+    left: 30%;
+    width: 40%;
 }
 
 /* Search page */
@@ -347,5 +347,8 @@ footer {
         left: 30px
     }
 
-    
+    footer {
+        position: fixed;
+
+    }
 }
