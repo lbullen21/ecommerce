@@ -1,4 +1,4 @@
-//hamburger menu
+/* Hamburger Menu */
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -18,10 +18,17 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
-//form validation
+/* Form Validation */
+
+function checkValid() {
+
+    const email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const phone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+}
+checkValid()
 
 
-/*slideshow functionality on product page*/
+/* Slideshow functionality on product page */
 let slideIndex = 1
 showSlides(slideIndex)
 
