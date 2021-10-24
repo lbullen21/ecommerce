@@ -21,7 +21,6 @@ function closeMenu() {
 /* Form Validation */
 
 function checkValid() {
-
     const emailBlock = document.getElementById("email");
     const phoneBlock = document.getElementById("phone");
 

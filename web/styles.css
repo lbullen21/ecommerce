@@ -222,7 +222,8 @@ button[type=submit]{
 }
 
 .not-valid {
-    border-color: red;
+    border:solid 2px red;
+    
 }
 
 /* Product description page */
