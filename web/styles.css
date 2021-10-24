@@ -222,7 +222,7 @@ button[type=submit]{
 }
 
 .not-valid {
-    border:solid 2px red;
+    border: solid 2px red;
     
 }
 
@@ -360,6 +360,11 @@ footer {
 
     .slide_img {
         width: 100%;
+    }
+    
+    .variety-product{
+        width: 80%;
+        left: 10.5%
     }
     
 }
