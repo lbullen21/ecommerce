@@ -228,8 +228,12 @@ button[type=submit]{
 /* Product description page */
 .variety-product{
     position: relative;
-    left: 30%;
-    width: 40%;
+    left: 35%;
+    width: 30%;
+}
+
+.product-quantity{
+    margin-bottom: 20px;
 }
 
 /* Search page */
