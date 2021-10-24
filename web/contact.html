@@ -53,11 +53,11 @@
             <input type="text" id="name" name="name" placeholder="First and Last Please">
             
             <label >Email Address</label>
-            <input type="text" id="email" name="email" pattern=".+@gmail\.com" required placeholder="Email Address">
+            <input type="text" id="email" name="email" placeholder="Email Address">
 
             <label>Phone Number</label>
             <br>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <input type="tel" id="phone" name="phone">
             <br>
 
             <label>Preferred Contact Method</label>
@@ -85,12 +85,13 @@
             <label for="comments">Comments</label>
             <textarea id="subject" name="subject" placeholder=" Tell us what you think.." style="height:200px"></textarea>
             
-            <input type="submit" value="Submit">
+            <button class="form-submit" type="submit" value="Submit">Submit</button>
         </form>
       </div>
       <footer>
           <p class="neonText">© 2021 The Fizzy Factory</p>
       </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="script.js" async defer></script>
     </body>
 </html>

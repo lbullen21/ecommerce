@@ -91,6 +91,10 @@ func productsHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func searchProducts() {
+
+}
+
 func handleRequests() {
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)

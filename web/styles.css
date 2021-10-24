@@ -193,10 +193,6 @@ a {
     to {opacity: 1}
   }
   
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
-  }
 
 /* Contact form */
 
@@ -219,7 +215,7 @@ input[type=text], input[type=tel], label, textarea {
     margin-bottom: 16px; 
 }
 
-input[type=submit]{
+button[type=submit]{
     position: relative;
     background-color: rgba(255, 166, 0, 0.897);
     color: white;

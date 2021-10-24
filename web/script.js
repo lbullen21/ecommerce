@@ -22,13 +22,33 @@ function closeMenu() {
 
 function checkValid() {
 
+    const inputEmail = document.getElementById("email").value;
+    const inputPhone = document.getElementById("phone").value;
+
     const email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const phone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+
+    const validEmail = inputEmail&&inputEmail.match(email)
+    const validPhone = inputPhone&&inputPhone.match(phone)
+
+    if(validEmail&&validPhone){
+        alert("Thank you for your info!")
+    } else if (!validEmail){
+        alert("Please add a valid email address.")
+    } else if (!validPhone){
+        alert("Please add a valid phone number.")
+    }
 }
-checkValid()
+
+$(".form-submit").click(function(){
+    checkValid();
+    event.preventDefault();
+})
 
 
-/* Slideshow functionality on product page */
+
+
+/* Slideshow functionality on homepage */
 let slideIndex = 1
 showSlides(slideIndex)
 
@@ -60,3 +80,27 @@ function showSlides(n){
 
 }
 
+/*Display products on products page when tab clicked*/
+$(".product-nav").click(function(){
+    function getProducts(){
+        $.get("http://localhost:3000/prducts", function(data){
+            displayProducts(JSON.parse(data))
+        })
+    }
+    
+    //prepares product html
+    function displayProducts(productsJSON){
+        $.each(productsJSON, function(i, product){
+            newHTML = `<div class="product">
+            <h3>${product.flavor}</h3>
+                    <a href="./product_description.html"> <img 
+                        class="product__img"
+                        src=${product.photo}
+                    /></a>
+                    <p class="price">${product.price} ${product.detail}</p> 
+            </div>`
+    
+            $(".section_products").append(newHTML)
+        })
+    }
+})    
