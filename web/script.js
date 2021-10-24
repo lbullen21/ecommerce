@@ -22,8 +22,11 @@ function closeMenu() {
 
 function checkValid() {
 
-    const inputEmail = document.getElementById("email").value;
-    const inputPhone = document.getElementById("phone").value;
+    const emailBlock = document.getElementById("email");
+    const phoneBlock = document.getElementById("phone");
+
+    const inputEmail = emailBlock.value;
+    const inputPhone = phoneBlock.value;
 
     const email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const phone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
@@ -33,10 +36,13 @@ function checkValid() {
 
     if(validEmail&&validPhone){
         alert("Thank you for your info!")
+    } else if (!validEmail&&!validPhone){
+        emailBlock.classList.add("not-valid")
+        phoneBlock.classList.add("not-valid")
     } else if (!validEmail){
-        alert("Please add a valid email address.")
+        emailBlock.classList.add("not-valid")
     } else if (!validPhone){
-        alert("Please add a valid phone number.")
+        phoneBlock.classList.add("not-valid")
     }
 }
 

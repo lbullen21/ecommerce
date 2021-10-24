@@ -88,7 +88,6 @@ a {
 }
 
 /* Products page */
-
 .section__products {
     position: relative;
     display: flex;
@@ -195,7 +194,6 @@ a {
   
 
 /* Contact form */
-
 form {
     position: relative;
     margin: auto;
@@ -223,8 +221,11 @@ button[type=submit]{
     border: none
 }
 
-/* Product description page */
+.not-valid {
+    border-color: red;
+}
 
+/* Product description page */
 .variety-product{
     position: relative;
     left: 30%;
@@ -232,7 +233,6 @@ button[type=submit]{
 }
 
 /* Search page */
-
 .searchBar {
     position: relative;
     width: 50%;
@@ -240,7 +240,6 @@ button[type=submit]{
 }
 
 /* Footer */
-
 footer {
     display: flex;
     position: static;
@@ -271,7 +270,6 @@ footer {
   }
 
   /* media queries */
-
   @media only screen and (max-width: 950px) {
     .navbar h1 {
         font-size: 3.5rem;
