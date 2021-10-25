@@ -123,8 +123,13 @@ function getProducts(){
         $.get("http://localhost:3000/search", { term: searchTerm }, function(data){
             console.log(data)
             displaySearch(JSON.parse(data))
+            
+            // if (!searchTerm){
+            //     alert("not valid")
+            // }
         })
     }
+        
 
     function displaySearch(productsJSON){
         $.each(productsJSON, function(i, product){

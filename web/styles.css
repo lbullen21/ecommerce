@@ -247,7 +247,7 @@ button[type=submit]{
 
 .search_products {
     position: relative;
-    left: 22%;
+    left: 26%;
 }
 
 /* Footer */
@@ -313,10 +313,6 @@ footer {
         /* margin-bottom: 200px; */
     }
 
-    /* .variety{
-        margin-bottom: 200px;
-    } */
-
     .hamburger {
         display: block;
         cursor: pointer;
@@ -354,6 +350,11 @@ footer {
     .nav-item{
         position: relative;
         right: 25px
+    }
+    .searchBar {
+        position: relative;
+        width: 90%;
+        left: 20px;
     }
     .section__products {
         bottom: 2rem;
