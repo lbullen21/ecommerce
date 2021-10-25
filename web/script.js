@@ -133,7 +133,7 @@ function getProducts(){
 
     function displaySearch(productsJSON){
         $.each(productsJSON, function(i, product){
-            
+            $(".search_products").html("")
             newHTML = `<div class="product">
             <h3>${product.flavor}</h3>
                     <a href="./product_description.html"> <img 
