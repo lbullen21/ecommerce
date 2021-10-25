@@ -60,7 +60,9 @@ func databaseConnect() {
 
 func productsHandler(w http.ResponseWriter, r *http.Request) {
 	//testing route
-	fmt.Fprintf(w, "Welcome to the Products Page!")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	// fmt.Fprintf(w, "Welcome to the Products Page!")
 	fmt.Println("Endpoint Hit: Products Page")
 
 	//Get method for all products
@@ -91,7 +93,36 @@ func productsHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func searchProducts() {
+func searchProducts(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	// fmt.Fprintf(w, "You have hit the search page!")
+
+	if r.Method == http.MethodGet {
+		var products []Product
+
+		searchTerm := r.URL.Query().Get("term")
+		term := "%" + searchTerm + "%"
+
+		query := `SELECT * FROM products WHERE flavor LIKE ?`
+
+		rows, err := db.Query(query, term)
+		if err != nil {
+			fmt.Println(err)
+		}
+		for rows.Next() {
+			var currentProduct Product
+
+			err := rows.Scan(&currentProduct.ID, &currentProduct.Name, &currentProduct.Photo, &currentProduct.Price, &currentProduct.Detail)
+			if err != nil {
+				fmt.Println(err)
+			}
+
+			products = append(products, currentProduct)
+		}
+		json.NewEncoder(w).Encode(products)
+	}
 
 }
 
@@ -101,6 +132,7 @@ func handleRequests() {
 
 	//gets all products in db
 	myRouter.HandleFunc("/products", productsHandler)
+	myRouter.HandleFunc("/search", searchProducts)
 
 	// Running the Server
 	log.Fatal(http.ListenAndServe(":3000", myRouter))

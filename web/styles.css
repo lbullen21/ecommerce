@@ -45,6 +45,7 @@ a {
 }
 .nav-menu {
     position: relative;
+    right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,15 +119,15 @@ a {
     position: relative;
     display: flex;
     margin-right: 0;
-    /* top: 25%; */
     left: 35%;
     height: 50%;
     align-content: center;
 }
 
-.variety {
+.product__img[src*="./images/assorted.png"] {
     left: 14%;
 }
+
 
 .price {
     text-align: center;
@@ -242,6 +243,11 @@ button[type=submit]{
     position: relative;
     width: 50%;
     left: 25%;
+}
+
+.search_products {
+    position: relative;
+    left: 22%;
 }
 
 /* Footer */

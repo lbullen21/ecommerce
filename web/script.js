@@ -86,12 +86,15 @@ function showSlides(n){
 }
 
 /*Display products on products page when tab clicked*/
-$(".product-nav").click(function(){
-    function getProducts(){
-        $.get("http://localhost:3000/prducts", function(data){
-            displayProducts(JSON.parse(data))
-        })
-    }
+function getProducts(){
+    $.get("http://localhost:3000/products", function(data){
+        console.log(data)
+        displayProducts(JSON.parse(data))
+        
+    })
+
+    console.log("working?")
+}
     
     //prepares product html
     function displayProducts(productsJSON){
@@ -102,10 +105,43 @@ $(".product-nav").click(function(){
                         class="product__img"
                         src=${product.photo}
                     /></a>
-                    <p class="price">${product.price} ${product.detail}</p> 
+                    <p class="price">$${product.price}  ( ${product.detail} )</p> 
             </div>`
     
-            $(".section_products").append(newHTML)
+            $(".section__products").append(newHTML)
+
+            
+        })
+    } 
+     
+
+
+/*Display search results*/
+    function getSearch(){
+        const searchTerm = document.getElementById("search-term").value
+        console.log(searchTerm)
+        $.get("http://localhost:3000/search", { term: searchTerm }, function(data){
+            console.log(data)
+            displaySearch(JSON.parse(data))
         })
     }
-})    
+
+    function displaySearch(productsJSON){
+        $.each(productsJSON, function(i, product){
+            
+            newHTML = `<div class="product">
+            <h3>${product.flavor}</h3>
+                    <a href="./product_description.html"> <img 
+                        class="product__img"
+                        src=${product.photo}
+                    /></a>
+                    <p class="price">$${product.price}  (${product.detail})</p> 
+            </div>`
+    
+            $(".search_products").append(newHTML)
+            
+        })
+        
+    }
+    
+
