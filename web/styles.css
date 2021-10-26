@@ -67,14 +67,15 @@ a {
 }
 
 
-.container, .container-contact {
+ .container-contact {
     position: relative;
-    height: 1000px;
+    height: 950px;
 
 }
 
-.home_container {
 
+
+.home_container, .product-container, .container {
     height: 800px;
 }
 
@@ -345,20 +346,26 @@ footer {
         left: 25%
     }
     .nav-menu{
-        
+        /* position: relative; */
         width: 375px;
         height: 400px;
         /* right: 11rem; */
     }
     .nav-item{
         position: relative;
-        right: 25px
+        right: 19px;
+        bottom: 22px;
+    
     }
     .searchBar {
-        position: relative;
         width: 90%;
         left: 20px;
     }
+
+    .search_products {
+        left: -7px;
+    }
+
     .section__products {
         margin-bottom: 10rem;
         bottom: 2rem;
