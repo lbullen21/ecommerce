@@ -27,7 +27,7 @@ a {
     font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 4rem;
-    left: 2%
+    left: 20%
 } 
 
 .hamburger {
@@ -339,7 +339,7 @@ footer {
 @media only screen and (max-width: 800px) {
     .navbar h1 {
         font-size: 3rem;
-        left: 18%
+        left: 25%
     }
     .nav-menu{
         
