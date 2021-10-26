@@ -105,7 +105,7 @@ function getProducts(){
                         class="product__img"
                         src=${product.photo}
                     /></a>
-                    <p class="price">$${product.price}  ( ${product.detail} )</p> 
+                    <p class="price">$${product.price}  (${product.detail})</p> 
             </div>`
     
             $(".section__products").append(newHTML)

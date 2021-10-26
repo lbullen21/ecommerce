@@ -337,6 +337,9 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
+    .product-container{
+        height: 160rem;
+    }
     .navbar h1 {
         font-size: 3rem;
         left: 25%
@@ -357,6 +360,7 @@ footer {
         left: 20px;
     }
     .section__products {
+        margin-bottom: 10rem;
         bottom: 2rem;
         left: 10px
     }
