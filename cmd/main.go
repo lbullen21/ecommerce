@@ -23,6 +23,13 @@ type Product struct {
 
 var db *sql.DB
 
+// func envVariables() {
+// 	err := godotenv.Load("auth.env")
+// 	if err != nil {
+// 		log.Fatal("Error loading .env file")
+// 	}
+// }
+
 func databaseConnect() {
 
 	//Create products table in MySQL

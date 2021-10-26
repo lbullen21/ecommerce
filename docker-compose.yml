@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+
+  cmd:
+    container_name: fizzy_cmd
+    build:
+      context: ./cmd
+    ports:
+      - 3030:3030
+    networks:
+      - backend
+      - frontend
+
+  db:
+    container_name: fizzy_db
+    build:
+      context: ./db
+    ports:
+      - 3306:3306
+    networks:
+      - backend
+
+  web:
+    container_name: fizzy_web
+    build:
+      context: ./web
+    ports:
+      - 5000:5000
+    networks:
+      - frontend
+
+networks:
+  backend:
+  frontend:
