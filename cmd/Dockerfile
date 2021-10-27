@@ -10,7 +10,7 @@ RUN go install -v ./...
 RUN go build main.go
 # RUN go run main.go .
 
-EXPOSE 3030
+EXPOSE 3000
 
 CMD ["./main"]
 

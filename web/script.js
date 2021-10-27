@@ -89,7 +89,7 @@ function showSlides(n){
 function getProducts(){
     $.get("http://localhost:3000/products", function(data){
         console.log(data)
-        displayProducts(JSON.parse(data))
+        displayProducts(JSON.parse(data));
         
     })
 

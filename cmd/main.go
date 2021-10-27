@@ -23,13 +23,15 @@ type Product struct {
 
 var db *sql.DB
 
-//allows access to the password in env file
+/* Allows access to the password in env file */
 // func envVariables() {
 // 	err := godotenv.Load("auth.env")
 // 	if err != nil {
 // 		log.Fatal("Error loading .env file")
 // 	}
 // }
+
+/* Was used to create db */
 
 // func databaseConnect() {
 

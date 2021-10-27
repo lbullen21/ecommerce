@@ -7,7 +7,7 @@ services:
     build:
       context: ./cmd
     ports:
-      - 3030:3030
+      - 3000:3000
     networks:
       - frontend
       - backend
@@ -28,7 +28,7 @@ services:
     ports:
       - 8080:80
     networks:
-    - frontend
+      - frontend
 
 networks:
   backend:

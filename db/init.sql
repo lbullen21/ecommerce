@@ -1,6 +1,6 @@
 USE fizzyFactory;
 
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE products (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     flavor TEXT NOT NULL,
     photo TEXT NOT NULL,
