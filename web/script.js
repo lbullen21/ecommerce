@@ -87,11 +87,12 @@ function showSlides(n){
 
 /*Display products on products page when tab clicked*/
 function getProducts(){
-    $.get("http://localhost:3000/products", function(data){
+   $.get("http://localhost:3000/products", function(data){
         console.log(data)
         displayProducts(JSON.parse(data));
         
     })
+
 
     console.log("working?")
 }

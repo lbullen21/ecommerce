@@ -155,7 +155,7 @@ func main() {
 	// dbHost := os.Getenv("DB_HOST")
 
 	//Connect to MySQL database
-	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
+	database, err := sql.Open("mysql", "root@tcp(fizzy_db:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {
 		fmt.Println("Something is not working")
