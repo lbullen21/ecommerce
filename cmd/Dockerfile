@@ -11,4 +11,4 @@ RUN go build main.go
 
 CMD ["./main"]
 
-# EXPOSE 3030
+EXPOSE 3030

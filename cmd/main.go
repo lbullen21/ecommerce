@@ -6,9 +6,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 )
 
 /* Product struct */
@@ -23,12 +25,13 @@ type Product struct {
 
 var db *sql.DB
 
-// func envVariables() {
-// 	err := godotenv.Load("auth.env")
-// 	if err != nil {
-// 		log.Fatal("Error loading .env file")
-// 	}
-// }
+//allows access to the password in env file
+func envVariables() {
+	err := godotenv.Load("auth.env")
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
 
 func databaseConnect() {
 
@@ -146,8 +149,13 @@ func handleRequests() {
 }
 
 func main() {
+
+	envVariables()
+	dbPassword := os.Getenv("DB_PASSWORD")
+	// dbHost := os.Getenv("DB_HOST")
+
 	//Connect to MySQL database
-	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
+	database, err := sql.Open("mysql", "root:"+dbPassword+"@tcp(127.0.0.1:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {
 		fmt.Println("Something is not working")
