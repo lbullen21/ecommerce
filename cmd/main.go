@@ -6,11 +6,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 )
 
 /* Product struct */
@@ -26,50 +24,50 @@ type Product struct {
 var db *sql.DB
 
 //allows access to the password in env file
-func envVariables() {
-	err := godotenv.Load("auth.env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-}
+// func envVariables() {
+// 	err := godotenv.Load("auth.env")
+// 	if err != nil {
+// 		log.Fatal("Error loading .env file")
+// 	}
+// }
 
-func databaseConnect() {
+// func databaseConnect() {
 
-	//Create products table in MySQL
-	create, err := db.Query(`CREATE TABLE IF NOT EXISTS products (
-		id INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-		flavor TEXT NOT NULL,
-		photo TEXT NOT NULL,
-		price FLOAT (10) NOT NULL,
-		detail TEXT NOT NULL
-		)`)
-	if err != nil {
-		panic(err.Error())
-	}
+// 	//Create products table in MySQL
+// 	create, err := db.Query(`CREATE TABLE IF NOT EXISTS products (
+// 		id INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+// 		flavor TEXT NOT NULL,
+// 		photo TEXT NOT NULL,
+// 		price FLOAT (10) NOT NULL,
+// 		detail TEXT NOT NULL
+// 		)`)
+// 	if err != nil {
+// 		panic(err.Error())
+// 	}
 
-	defer create.Close()
+// 	defer create.Close()
 
-	//Add products to db (only run once)
-	// insert, err := db.Query(`INSERT INTO products (flavor, photo, price, detail)
-	// VALUES
-	//     ('Limoncello', './images/limoncello.png', '5.99', 'pack of 6'),
-	//     ('Grapefruit', './images/sdGrapefruit.png', '5.99', 'pack of 6'),
-	//     ('Key Lime', './images/keyLime.png', '5.99', 'pack of 6'),
-	//     ('Lemon', './images/sdLemon.png', '5.99', 'pack of 6'),
-	//     ('Lime', './images/sdLime.png', '5.99', 'pack of 6'),
-	//     ('Tangerine', './images/tangerine.png', '5.99', 'pack of 6'),
-	//     ('Hibiscus', './images/hibiscus.png', '5.99', 'pack of 6'),
-	//     ('Variety Pack', './images/assorted.png', '12.99', '3 packs of 6')`)
-	// if err != nil {
-	// 	panic(err.Error())
-	// }
+//Add products to db (only run once)
+// insert, err := db.Query(`INSERT INTO products (flavor, photo, price, detail)
+// VALUES
+//     ('Limoncello', './images/limoncello.png', '5.99', 'pack of 6'),
+//     ('Grapefruit', './images/sdGrapefruit.png', '5.99', 'pack of 6'),
+//     ('Key Lime', './images/keyLime.png', '5.99', 'pack of 6'),
+//     ('Lemon', './images/sdLemon.png', '5.99', 'pack of 6'),
+//     ('Lime', './images/sdLime.png', '5.99', 'pack of 6'),
+//     ('Tangerine', './images/tangerine.png', '5.99', 'pack of 6'),
+//     ('Hibiscus', './images/hibiscus.png', '5.99', 'pack of 6'),
+//     ('Variety Pack', './images/assorted.png', '12.99', '3 packs of 6')`)
+// if err != nil {
+// 	panic(err.Error())
+// }
 
-	// defer insert.Close()
+// defer insert.Close()
 
-}
+// }
 
 func productsHandler(w http.ResponseWriter, r *http.Request) {
-	//testing route
+
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// fmt.Fprintf(w, "Welcome to the Products Page!")
@@ -150,12 +148,12 @@ func handleRequests() {
 
 func main() {
 
-	envVariables()
-	dbPassword := os.Getenv("DB_PASSWORD")
+	// envVariables()
+	// dbPassword := os.Getenv("DB_PASSWORD")
 	// dbHost := os.Getenv("DB_HOST")
 
 	//Connect to MySQL database
-	database, err := sql.Open("mysql", "root:"+dbPassword+"@tcp(127.0.0.1:3306)/fizzyFactory")
+	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {
 		fmt.Println("Something is not working")
@@ -163,6 +161,6 @@ func main() {
 	db = database
 	defer db.Close()
 
-	databaseConnect()
+	// databaseConnect()
 	handleRequests()
 }

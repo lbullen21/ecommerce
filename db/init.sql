@@ -1,12 +1,12 @@
 USE fizzyFactory;
 
 CREATE TABLE IF NOT EXISTS products (
-		id INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-		flavor TEXT NOT NULL,
-		photo TEXT NOT NULL,
-		price FLOAT (10) NOT NULL,
-		detail TEXT NOT NULL
-        );
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    flavor TEXT NOT NULL,
+    photo TEXT NOT NULL,
+    price FLOAT NOT NULL,
+    detail TEXT NOT NULL);
+
 
 INSERT INTO products (flavor, photo, price, detail)
 	 VALUES
