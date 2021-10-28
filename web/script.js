@@ -85,6 +85,22 @@ function showSlides(n){
 
 }
 
+
+//currency converter
+function convertCurrency(){
+    const apiKey = "793d7f349f7723249eab"
+    const url = `https://free.currconv.com/api/v7/convert?q=USD_EUR&compact=ultra&apiKey=${apiKey}`
+
+    $.get(url, function(data){
+        const usdToEur = Object.values(data)[0]
+        const dollarValue = document.getElementById("currency-converter").value
+        const displayEuroValue = document.getElementById("currency-results")
+        const euroValue = (dollarValue*usdToEur).toFixed(2)
+        displayEuroValue.innerHTML = `Price in Euros: €${euroValue}`
+    })  
+
+}
+
 /*Display products on products page when tab clicked*/
 function getProducts(){
    $.get("http://localhost:3000/products", function(data){
@@ -96,7 +112,7 @@ function getProducts(){
 
     console.log("working?")
 }
-    
+  
     //prepares product html
     function displayProducts(productsJSON){
         $.each(productsJSON, function(i, product){
@@ -120,8 +136,9 @@ function getProducts(){
 /*Display search results*/
     function getSearch(){
         const searchTerm = document.getElementById("search-term").value
+        const priceSort = document.getElementById("price-sort").value
         console.log(searchTerm)
-        $.get("http://localhost:3000/search", { term: searchTerm }, function(data){
+        $.get("http://localhost:3000/search", { term: searchTerm, order: priceSort}, function(data){
             console.log(data)
             displaySearch(JSON.parse(data))
             

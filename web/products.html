@@ -47,7 +47,11 @@
       <div class="product-container">
         <div class="section__intro">
             <h2>Products</h2>
+            <input type="number" id="currency-converter" placeholder="USD">
+            <button type="submit" id="currency-button" onclick="convertCurrency()">Convert to Euros</button>
+            <div id="currency-results"> </div>
         </div>
+       
         <div class="section__products">
             <!-- <div class="product">
                 <h3>Limoncello</h3>
@@ -129,7 +133,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./script.js"></script>
         <script type="text/javascript">
-            getProducts()
+            getProducts() 
           </script>
     </body>
 </html>

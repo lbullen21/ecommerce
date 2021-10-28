@@ -114,8 +114,18 @@ func searchProducts(w http.ResponseWriter, r *http.Request) {
 
 		searchTerm := r.URL.Query().Get("term")
 		term := "%" + searchTerm + "%"
+		order := r.URL.Query().Get("order")
 
-		query := `SELECT * FROM products WHERE flavor LIKE ?`
+		var query string
+
+		switch order {
+		case "lowToHigh":
+			query = `SELECT * FROM products WHERE flavor LIKE ? ORDER BY price ASC`
+		case "highToLow":
+			query = `SELECT * FROM products WHERE flavor LIKE ? ORDER BY price DESC`
+		default:
+			query = `SELECT * FROM products`
+		}
 
 		rows, err := db.Query(query, term)
 		if err != nil {
@@ -155,7 +165,9 @@ func main() {
 	// dbHost := os.Getenv("DB_HOST")
 
 	//Connect to MySQL database
-	database, err := sql.Open("mysql", "root@tcp(fizzy_db:3306)/fizzyFactory")
+
+	//change to fizzy_db before 3306
+	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {
 		fmt.Println("Something is not working")

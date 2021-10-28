@@ -48,7 +48,18 @@
         <div class="section__intro searchBar">
             <h2>Search</h2>
             <input id="search-term" type="text" placeholder="Search..">
+            
+            <div class="searchFormElement">
+              <label for="price-sort">Sort by price:</label>
+    
+              <select id="price-sort" class="element--bottomMargin" onclick="getSearch()">
+                <option value="all" onclick="getSearch()">All</option>
+                <option value="lowToHigh" onclick="getSearch()">Low To High</option>
+                <option value="highToLow" onclick="getSearch()">High To Low</option>
+              </select>
+          </div>
             <button class="search-button" type="submit" value="Submit" onclick="getSearch()">Search</button>
+
             <div class="search_products"></div>
         </div>
         
