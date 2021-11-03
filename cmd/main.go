@@ -119,7 +119,7 @@ func searchProducts(w http.ResponseWriter, r *http.Request) {
 		term := "%" + searchTerm + "%"
 		order := r.URL.Query().Get("order")
 
-		//this switch order will allow the filter to work
+		//this switch order will allow the filter to work, displays the last of a certain price
 		switch order {
 		case "lowToHigh":
 			query = `SELECT * FROM products WHERE flavor LIKE ? ORDER BY price ASC`
@@ -170,7 +170,7 @@ func main() {
 	//Connect to MySQL database
 
 	//change to fizzy_db before 3306 127.0.0.1
-	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
+	database, err := sql.Open("mysql", "root@tcp(fizzy_db:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {
 		fmt.Println("Something is not working")
