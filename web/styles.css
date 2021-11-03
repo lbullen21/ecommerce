@@ -129,6 +129,10 @@ a {
     left: 14%;
 }
 
+.product__img[src*="./images/homepage2.png"] {
+    left: 6%;
+}
+
 
 .price {
     text-align: center;

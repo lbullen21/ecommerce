@@ -18,7 +18,6 @@ INSERT INTO products (flavor, photo, price, detail, category)
         ('Lemon', './images/sdLemon.png', '5.99', 'pack of 12', 'singlePack'),
         ('Lime', './images/sdLime.png', '5.99', 'pack of 12', 'singlePack'),
         ('Tangerine', './images/tangerine.png', '5.99', 'pack of 12', 'singlePack'),
-        ('Hibiscus', './images/hibiscus.png', '5.99', 'pack of 12', 'singlePack'),
         ('Variety Pack', './images/assorted.png', '12.99', '3 packs of 12', 'featured'),
         ('FEATURED Variety Pack', './images/homepage2.png', '12.99', '3 packs of 12', 'featured');
 

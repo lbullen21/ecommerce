@@ -14,11 +14,12 @@ import (
 /* Product struct */
 
 type Product struct {
-	ID     int     `json:"id"`
-	Name   string  `json:"flavor"`
-	Photo  string  `json:"photo"`
-	Price  float32 `json:"price"`
-	Detail string  `json:"detail"`
+	ID       int     `json:"id"`
+	Name     string  `json:"flavor"`
+	Photo    string  `json:"photo"`
+	Price    float32 `json:"price"`
+	Detail   string  `json:"detail"`
+	Category string  `json:"category"`
 }
 
 var db *sql.DB
@@ -89,7 +90,7 @@ func productsHandler(w http.ResponseWriter, r *http.Request) {
 		for rows.Next() {
 			var currentProduct Product
 
-			err := rows.Scan(&currentProduct.ID, &currentProduct.Name, &currentProduct.Photo, &currentProduct.Price, &currentProduct.Detail)
+			err := rows.Scan(&currentProduct.ID, &currentProduct.Name, &currentProduct.Photo, &currentProduct.Price, &currentProduct.Detail, &currentProduct.Category)
 			if err != nil {
 				fmt.Println()
 				return
@@ -97,6 +98,7 @@ func productsHandler(w http.ResponseWriter, r *http.Request) {
 
 			products = append(products, currentProduct)
 		}
+
 		json.NewEncoder(w).Encode(products)
 
 	}
@@ -111,30 +113,31 @@ func searchProducts(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
 		var products []Product
+		var query string
 
 		searchTerm := r.URL.Query().Get("term")
 		term := "%" + searchTerm + "%"
 		order := r.URL.Query().Get("order")
 
-		var query string
-
+		//this switch order will allow the filter to work
 		switch order {
 		case "lowToHigh":
 			query = `SELECT * FROM products WHERE flavor LIKE ? ORDER BY price ASC`
 		case "highToLow":
 			query = `SELECT * FROM products WHERE flavor LIKE ? ORDER BY price DESC`
 		default:
-			query = `SELECT * FROM products`
+			query = `SELECT * FROM products WHERE flavor LIKE ?`
 		}
 
 		rows, err := db.Query(query, term)
 		if err != nil {
 			fmt.Println(err)
+			return
 		}
 		for rows.Next() {
 			var currentProduct Product
 
-			err := rows.Scan(&currentProduct.ID, &currentProduct.Name, &currentProduct.Photo, &currentProduct.Price, &currentProduct.Detail)
+			err := rows.Scan(&currentProduct.ID, &currentProduct.Name, &currentProduct.Photo, &currentProduct.Price, &currentProduct.Detail, &currentProduct.Category)
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -166,7 +169,7 @@ func main() {
 
 	//Connect to MySQL database
 
-	//change to fizzy_db before 3306
+	//change to fizzy_db before 3306 127.0.0.1
 	database, err := sql.Open("mysql", "root@tcp(127.0.0.1:3306)/fizzyFactory")
 	fmt.Println("connected to db")
 	if err != nil {

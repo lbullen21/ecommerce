@@ -97,6 +97,7 @@ function convertCurrency(){
         const displayEuroValue = document.getElementById("currency-results")
         const euroValue = (dollarValue*usdToEur).toFixed(2)
         displayEuroValue.innerHTML = `Price in Euros: €${euroValue}`
+        console.log(euroValue)
     })  
 
 }
